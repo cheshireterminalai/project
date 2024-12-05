@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes gradient-xy {
+  0%, 100% {
+    background-size: 400% 400%;
+    background-position: left top;
+  }
+  25% {
+    background-size: 400% 400%;
+    background-position: right top;
+  }
+  50% {
+    background-size: 400% 400%;
+    background-position: right bottom;
+  }
+  75% {
+    background-size: 400% 400%;
+    background-position: left bottom;
+  }
+}
+
+.animate-gradient-xy {
+  animation: gradient-xy 15s ease infinite;
+}
+
+body {
+  background: #000;
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>😺</text></svg>") 16 0, auto;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #9333ea, #4ade80, #9333ea);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #a855f7, #86efac, #a855f7);
+}
+
+/* ElevenLabs Widget Styles */
+.elevenlabs-widget {
+  --elevenlabs-widget-primary-color: theme('colors.purple.500');
+  --elevenlabs-widget-secondary-color: theme('colors.green.400');
+  filter: drop-shadow(0 0 10px theme('colors.purple.500'));
+  transition: all 0.3s ease;
+}
+
+.elevenlabs-widget:hover {
+  filter: drop-shadow(0 0 20px theme('colors.purple.500'));
+  transform: scale(1.02);
+}
